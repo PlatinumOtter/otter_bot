@@ -7,6 +7,7 @@ defmodule OtterBot do
 
   defp start_services do
     use OtterBot.Services.Tests
+    #use OtterBot.Services.Play
   end 
 
   def start(_type, _args) do
