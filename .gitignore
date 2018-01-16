@@ -23,4 +23,4 @@ erl_crash.dump
 otter_bot-*.tar
 
 # Ignore the private bot token
-token
+bot_token

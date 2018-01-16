@@ -2,17 +2,18 @@ defmodule OtterBot do
   @moduledoc """
   Documentation for OtterBot.
   """
+  use Application
+  alias Alchemy.Client
 
-  @doc """
-  Hello world.
+  defp start_services do
+    use OtterBot.Services.Tests
+  end 
 
-  ## Examples
-
-      iex> OtterBot.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def start(_type, _args) do
+    {_, bot_token} = File.read("bot_token")
+    bot_token = String.trim(bot_token)
+    run = Client.start(bot_token)
+    start_services()
+    run 
   end
 end
